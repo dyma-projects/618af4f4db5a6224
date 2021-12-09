@@ -1,7 +1,19 @@
-<h3>Exercice 2 : mise en place d'un décorateur Viewchild </h3>
+<h3>Exercice 2 : mise en place d'un décorateur Viewchild</h3>
 <br />
-<input type="text" >
+<input #myinput type="text" />
 <br />
 <br />
-<span> valeur de l'input : {{ valeur }}</span>
-<hr>
+<button class="btn btn-primary mr-5"  (click)="showInputValue()">Ajouter</button>
+
+<span>
+     valeur de l'input : {{ valeur }} 
+
+</span>
+
+<hr />
+
+<!-- 
+J'ai essayé avec cette methode mais je ne comprend pas pourquoi ca ne marche pas 
+<span ((keypress))="showInputValue()">
+     valeur de l'input : {{ valeur }} 
+</span> -->

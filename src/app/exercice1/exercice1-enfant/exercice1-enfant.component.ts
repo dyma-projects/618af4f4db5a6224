@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-exercice1-enfant',
-  templateUrl: './exercice1-enfant.component.html',
-  styleUrls: ['./exercice1-enfant.component.css']
+  selector: "app-exercice1-enfant",
+  templateUrl: "./exercice1-enfant.component.html",
+  styleUrls: ["./exercice1-enfant.component.css"],
 })
 export class Exercice1EnfantComponent implements OnInit {
+  public Compteur: number = 0;
 
-  constructor() { }
+  @Output() changementCompteur = new EventEmitter();
 
-  ngOnInit() {
+  public add() {
+    this.Compteur++;
+    this.changementCompteur.emit({ value: this.Compteur });
+  }
+  public remove() {
+    this.Compteur--;
+    this.changementCompteur.emit({ value: this.Compteur });
   }
 
+  constructor() {}
+
+  ngOnInit() {}
 }
